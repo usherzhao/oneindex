@@ -67,20 +67,19 @@ function file_ico($item){
     top: 180px;
 }
 </style>
-  <div class="mdui-typo">
-          <label class="mdui-switch">
-            看图模式
-            <input type="checkbox" id="image_view" <?php if ($_COOKIE["image_mode"] == "1") {echo "checked";} ?>>
-            <i class="mdui-switch-icon"></i>
-          </label>
-    <p><?php if(($page-1) >= 1 ):?><a href="/?<?php e($fullpath) ?>.page-<?php e($page-1) ?>/">上一页</a><?php endif;?> 
-      第<?php e($page); ?>页 
-      <?php if(($page+1)<=$zongye ):?><a href="/?<?php e($fullpath) ?>.page-<?php e($page+1) ?>/">下一页</a><?php endif;?> 
-      总页数<?php e($zongye); ?></p>
-    </div>
+
 <div class="nexmoe-item">
 <div class="mdui-row">
 	<ul class="mdui-list">
+		<li class="mdui-list-item th">
+		  <div class="mdui-left mdui-text-left">
+		    <label class="mdui-switch">
+		      <span class="mdui-chip-title">看图模式</span>
+		      <input type="checkbox" id="image_view" <?php if ($_COOKIE["image_mode"] == "1") {echo "checked";} ?>>
+		      <i class="mdui-switch-icon"></i>
+		    </label>
+		  </div>
+		</li>
 		<li class="mdui-list-item th">
 		  <div class="mdui-col-xs-12 mdui-col-sm-7">文件 <i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="downward">expand_more</i></div>
 		  <div class="mdui-col-sm-3 mdui-text-right">修改时间 <i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">expand_more</i></div>
@@ -129,6 +128,22 @@ function file_ico($item){
 		</li>
 			<?php endif;?>
 		<?php endforeach;?>
+
+		  <?php if($zongye > 1 ):?>
+		  <li class="mdui-list-item th">
+		    <div class="mdui-col-sm-6 mdui-left mdui-text-left">
+		      <?php if(($page-1) >= 1 ):?>
+		        <a href="/?<?php e($fullpath) ?>.page-<?php e($page-1) ?>/" class="mdui-btn mdui-btn-raised">上一页</a>
+		      <?php endif;?>
+		      <?php if(($page+1) <= $zongye ):?>
+		        <a href="/?<?php e($fullpath) ?>.page-<?php e($page-1) ?>/" class="mdui-btn mdui-btn-raised">下一页</a>
+		      <?php endif;?>
+		    </div>
+		    <div class="mdui-col-sm-6 mdui-right mdui-text-right">
+		      <div class="mdui-right mdui-text-right"><span class="mdui-chip-title">Page: <?php e($page);?>/<?php e($zongye);?></span></div>
+		    </div>
+		  </li>
+		  <?php endif;?>
 	</ul>
 </div>
 </div>
@@ -141,13 +156,6 @@ function file_ico($item){
 	<?php e($readme);?>
 </div>
 <?php endif;?>
-  <div class="mdui-typo">
-    <br>
-    <p><?php if(($page-1) >= 1 ):?><a href="/?<?php e($fullpath) ?>.page-<?php e($page-1) ?>/">上一页</a><?php endif;?> 
-      第<?php e($page); ?>页 
-      <?php if(($page+1)<=$zongye ):?><a href="/?<?php e($fullpath) ?>.page-<?php e($page+1) ?>/">下一页</a><?php endif;?> 
-      总页数<?php e($zongye); ?></p>
-    </div>
 </div>
 <script>
 $ = mdui.JQ;
