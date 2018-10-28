@@ -75,7 +75,7 @@ function file_ico($item){
 		  <div class="mdui-left mdui-text-left">
 		    <label class="mdui-switch">
 		      <span class="mdui-chip-title">看图模式</span>
-		      <input type="checkbox" id="image_view" <?php if ($_COOKIE["image_mode"] == "1") {echo "checked";} ?>>
+		        <input type="checkbox" id="image_view" <?php if ($_COOKIE["image_mode"] == "1") {echo "checked";} ?>>
 		      <i class="mdui-switch-icon"></i>
 		    </label>
 		  </div>
