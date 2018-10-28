@@ -9,7 +9,7 @@ class AdminController{
 	  'cache_type'=>'secache',
 	  'cache_expire_time' => 3600,
 	  'cache_refresh_time' => 600,
-	  'root_path' => '?',
+	  'root_path' => '',
 	  'show'=> array (
 	  	'stream'=>['txt'],
 	    'image' => ['bmp','jpg','jpeg','png','gif'],
@@ -153,7 +153,7 @@ class AdminController{
 		if($_SERVER['HTTP_HOST'] == 'localhost'){
 			$redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
 		}else{
-			// 非https,调用https://moeclub.org/onedrive-login中转
+			// 调用 https://moeclub.org/onedrive-login 中转
 			$redirect_uri = 'https://moeclub.org/onedrive-login';
 		}
 
