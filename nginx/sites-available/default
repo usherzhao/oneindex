@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    server_name _;
+    gzip on;
+    autoindex off;
+    include /etc/nginx/fcgiwrap.conf;
+    root /var/www/oneindex;
+    location / {
+        index index.php index.html;
+        try_files $uri $uri/ =404;
+    }
+}
