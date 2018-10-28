@@ -8,6 +8,6 @@ server {
     location / {
         index index.php index.html;
         include /etc/nginx/fcgiwrap.conf;
-        try_files $uri $uri/ /index.php?$args;
+        try_files $uri $uri/ /?$args;
     }
 }
