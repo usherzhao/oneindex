@@ -10,6 +10,9 @@ Onedrive Directory Index
 ```
 wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/master/install.sh |bash
 ```
+## 创意整合
+### 看图模式
+[https://github.com/hang666/oneindex-h](https://github.com/hang666/oneindex-h)  
 
 ## change log:  
 18-03-29: 更新直链获取机制、缓存机制，避免频繁访问的token失效  
