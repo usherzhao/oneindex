@@ -7,6 +7,7 @@ server {
     root /var/www/oneindex;
     location / {
         index index.php index.html;
-        try_files $uri $uri/ =404;
+        include /etc/nginx/fcgiwrap.conf;
+        try_files $uri $uri/ /index.php?$args;
     }
 }
