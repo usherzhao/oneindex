@@ -2,7 +2,7 @@
 define('VIEW_PATH', ROOT.'view/admin/');
 class AdminController{
 	static $default_config = array(
-	  'site_name' =>'OneIndex',
+	  'site_name' => 'OneIndex',
 	  'password' => 'oneindex',
 	  'style'=>'material',
 	  'onedrive_root' =>'',
@@ -20,7 +20,9 @@ class AdminController{
 	    'code'=>['html','htm','php', 'css', 'go','java','js','json','txt','sh','md'],
 	    'doc'=>['csv','doc','docx','odp','ods','odt','pot','potm','potx','pps','ppsx','ppsxm','ppt','pptm','pptx','rtf','xls','xlsx']
 	  ),
-	  'images'=>['home'=>false,'public'=>false, 'exts'=>['jpg','png','gif','bmp']]
+	  'images'=>['home'=>false,'public'=>false, 'exts'=>['jpg','png','gif','bmp']],
+	  'client_id'=>'ea2b36f6-b8ad-40be-bc0f-e5e4a4a7d4fa',
+	  'client_secret'=>'h27zG8pr8BNsLU0JbBh5AOznNS5Of5Y540l/koc7048='
 	);
 	
 	function __construct(){
@@ -153,13 +155,11 @@ class AdminController{
 		if($_SERVER['HTTP_HOST'] == 'localhost'){
 			$redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
 		}else{
-			// 非https,调用ju.tn中转
-			$redirect_uri = 'https://ju.tn/';
+			// 非https,调用https://moeclub.org/onedrive-login中转
+			$redirect_uri = 'https://moeclub.org/onedrive-login';
 		}
-		
-		$ru = "https://developer.microsoft.com/en-us/graph/quick-start?appID=_appId_&appName=_appName_&redirectUrl={$redirect_uri}&platform=option-php";
-		$deepLink = "/quickstart/graphIO?publicClientSupport=false&appName=oneindex&redirectUrl={$redirect_uri}&allowImplicitFlow=false&ru=".urlencode($ru);
-		$app_url = "https://apps.dev.microsoft.com/?deepLink=".urlencode($deepLink);
+
+		$app_url = "https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id={$client_id}&redirect_uri={$redirect_uri}";
 		return view::load('install/install_1')->with('title','系统安装')
 						->with('redirect_uri', $redirect_uri)
 						->with('app_url', $app_url);
