@@ -6,9 +6,6 @@ Onedrive Directory Index
 
 直接列onedrive目录，文件直链下载。  
 
-## demo
-[https://xn.tn](https://xn.tn)  
-
 ## change log:  
 18-03-29: 更新直链获取机制、缓存机制，避免频繁访问的token失效  
 18-03-29: 解决非英文编码问题  
@@ -47,37 +44,7 @@ Onedrive Directory Index
 3、oneindex 程序   
 
 ## 安装：
-<img width="658" alt="image" src="https://raw.githubusercontent.com/donwa/oneindex/files/images/install.gif">  
-
-
-## docker 安装运行：
-
-从docker仓库获取镜像：
-```sh
-docker pull yinaoxiong/oneindex
-```
-
-或者从源码构建镜像：
-
-```shell
-git clone https://github.com/donwa/oneindex.git
-cd oneindex/
-docker build -t your-image-name .
-```
-
-运行：
-
-```shell
-docker run -d -p {open port}:80 --name {container name} --restart=always {image name}
-```
-
-停止删除容器：
-
-```shell
-docker stop {container name}
-docker rm -v {container name}
-```
-
+<img width="658" alt="image" src="https://raw.githubusercontent.com/0oVicero0/oneindex/files/images/install.gif">  
 
 
 ## 计划任务  
@@ -93,7 +60,7 @@ docker rm -v {container name}
 ## 特殊文件实现功能  
 ` README.md `、`HEAD.md` 、 `.password`特殊文件使用  
 
-可以参考[https://github.com/donwa/oneindex/tree/files](https://github.com/donwa/oneindex/tree/files)  
+可以参考[https://github.com/0oVicero0/oneindex/tree/files](https://github.com/0oVicero0/oneindex/tree/files)  
 
 **在文件夹底部添加说明:**  
 >在onedrive的文件夹中添加` README.md `文件，使用markdown语法。  
@@ -125,25 +92,4 @@ php one.php token:refresh
 **上传文件:**  
 ```
 php one.php upload:file 本地文件 [onedrive文件]
-```
-
-
-**上传文件夹:**  
-```
-php one.php upload:folder 本地文件夹 [onedrive文件夹]
-```
-
-例如：  
-```
-//上传demo.zip 到onedrive 根目录  
-php one.php upload:file demo.zip  
-
-//上传demo.zip 到onedrive /test/目录  
-php one.php upload:file demo.zip /test/  
-
-//上传demo.zip 到onedrive /test/目录并命名为 d.zip  
-php one.php upload:file demo.zip /test/d.zip  
-
-//上传up/ 到onedrive /test/  
-php one.php upload:file up/ /test/
 ```
