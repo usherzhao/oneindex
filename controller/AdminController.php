@@ -21,8 +21,6 @@ class AdminController{
 	    'doc'=>['csv','doc','docx','odp','ods','odt','pot','potm','potx','pps','ppsx','ppsxm','ppt','pptm','pptx','rtf','xls','xlsx']
 	  ),
 	  'images'=>['home'=>false,'public'=>false, 'exts'=>['jpg','png','gif','bmp']],
-	  'client_id'=>'ea2b36f6-b8ad-40be-bc0f-e5e4a4a7d4fa',
-	  'client_secret'=>'h27zG8pr8BNsLU0JbBh5AOznNS5Of5Y540l/koc7048='
 	);
 	
 	function __construct(){
