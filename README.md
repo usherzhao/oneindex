@@ -6,6 +6,11 @@ Onedrive Directory Index
 
 直接列onedrive目录，文件直链下载。  
 
+## 一键安装（Debian 8）：
+```
+wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/master/install.sh |bash
+```
+
 ## change log:  
 18-03-29: 更新直链获取机制、缓存机制，避免频繁访问的token失效  
 18-03-29: 解决非英文编码问题  
