@@ -9,8 +9,9 @@
 
 <?php if($refresh_token):?>
 	<h1 class='mdui-text-color-green'>程序安装成功!</h1>
+	<small>初始密码: <?php echo config('password');?></small>
 	<br><br>
-	<a class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-float-left" href="?/admin/" ><i class="mdui-icon material-icons">&#xe8b8;</i> 管理后台</a>(初始密码:oneindex)
+	<a class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-float-left" href="?/admin/" ><i class="mdui-icon material-icons">&#xe8b8;</i> 管理后台</a>
 	<a class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-float-right" href="./"><i class="mdui-icon material-icons">&#xe2c7;</i> 访问网站</a>
 <?php else:?>
 	<h1  class='mdui-text-color-red'>程序安装失败!</h1>
