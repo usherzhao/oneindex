@@ -3,21 +3,32 @@
 $item['thumb'] = onedrive::thumbnail($item['path']);
 ?>
 <?php view::begin('content');?>
-<link class="dplayer-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
-<script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+<link class="dplayer-css" rel="stylesheet" href="//moeclub.org/embedded/static/DPlayer.min.css">
+<script src="//moeclub.org/embedded/static/DPlayer.min.js"></script>
 <div class="mdui-container-fluid">
 	<div class="nexmoe-item">
 	<div class="mdui-center" id="dplayer"></div>
 	
 	<!-- 固定标签 -->
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">下载地址</label>
-	  <input class="mdui-textfield-input" type="text" value="<?php e($url);?>"/>
+	<div class="mdui-row">
+	  <select class="mdui-select" mdui-select="{position: 'top'}" id="sel">
+	    <option value="<?php e($url);?>" selected>下载地址</option>
+	    <option value="<video><source src="<?php e($url);?>" type="video/mp4"></video>">引用地址</option>
+	  </select>
+	  <textarea class="mdui-textfield-input" id="val" readonly><?php e($url);?></textarea>
 	</div>
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">引用地址</label>
-	  <textarea class="mdui-textfield-input"><video><source src="<?php e($url);?>" type="video/mp4"></video></textarea>
-	</div>
+	<script type="text/javascript">
+	    window.onload = function() {
+	        var sel = document.getElementById("sel");
+	        if(sel && sel.addEventListener){
+	            sel.addEventListener('change',function(e){
+	                var ev = e||window.event;
+	                var target = ev.target||ev.srcElement;
+	                document.getElementById("val").value = target.value;
+	            },false)
+	        }
+	    }
+	</script>
 	</div>
 </div>
 <script>

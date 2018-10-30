@@ -9,14 +9,25 @@
 	
 	<br>
 	<!-- 固定标签 -->
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">下载地址</label>
-	  <input class="mdui-textfield-input" type="text" value="<?php e($url);?>"/>
+	<div class="mdui-row">
+	  <select class="mdui-select" mdui-select="{position: 'top'}" id="sel">
+	    <option value="<?php e($url);?>" selected>下载地址</option>
+	    <option value="<audio src='<?php e($url);?>'></audio>">引用地址</option>
+	  </select>
+	  <textarea class="mdui-textfield-input" id="val" readonly><?php e($url);?></textarea>
 	</div>
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">引用地址</label>
-	  <textarea class="mdui-textfield-input"><audio src="<?php e($url);?>"></audio></textarea>
-	</div>
+	<script type="text/javascript">
+	    window.onload = function() {
+	        var sel = document.getElementById("sel");
+	        if(sel && sel.addEventListener){
+	            sel.addEventListener('change',function(e){
+	                var ev = e||window.event;
+	                var target = ev.target||ev.srcElement;
+	                document.getElementById("val").value = target.value;
+	            },false)
+	        }
+	    }
+	</script>
 	</div>
 </div>
 <a href="<?php e($url);?>" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
