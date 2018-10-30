@@ -12,7 +12,7 @@ wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/maste
 ```
 ## 创意整合
 1.一些样式美化修改         
-2.分页模式 [oneindex-h](https://github.com/hang666/oneindex-h)           
+2.分页模式创意来自 [oneindex-h](https://github.com/hang666/oneindex-h)           
 
 ## change log:  
 18-03-29: 更新直链获取机制、缓存机制，避免频繁访问的token失效  
