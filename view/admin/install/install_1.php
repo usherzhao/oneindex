@@ -12,8 +12,7 @@
 
 	<div class="mdui-typo">
       <h4 class="doc-article-title">
-	    填入<code>client_id</code>和<code>client_secret</code>,
-      	<a href="<?php echo $app_url;?>" target="_blank" class="mdui-btn mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe89e;</i> 获取应用ID和机密(分两个页面显示，请注意保存)</a>
+	    填入<code>client_id</code>和<code>client_secret</code>
       </h4>
     </div>
 
