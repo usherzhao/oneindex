@@ -1,5 +1,5 @@
 # oneindex
-Onedrive Directory Index
+OneDrive Directory Index
 
 ## 功能：
 不用服务器空间，不走服务器流量，  
@@ -14,8 +14,9 @@ wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/maste
 [萌咖 存储仓库](https://moeclub.org/onedrive/)
 
 ## 创意整合
-1.一些样式修改。         
-2.分页模式，加快页面预览速度。创意来自[oneindex-h](https://github.com/hang666/oneindex-h)           
+1.极大简化安装步骤。
+2.一些样式修改。         
+3.分页模式，加快页面预览速度。创意来自[oneindex-h](https://github.com/hang666/oneindex-h)           
 
 ## change log:  
 18-03-29: 更新直链获取机制、缓存机制，避免频繁访问的token失效  
