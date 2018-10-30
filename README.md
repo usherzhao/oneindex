@@ -14,7 +14,7 @@ wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/maste
 [萌咖 存储仓库](https://moeclub.org/onedrive/)
 
 ## 创意整合
-1.极大简化安装步骤。
+1.极大简化安装步骤。           
 2.一些样式修改。         
 3.分页模式，加快页面预览速度。创意来自[oneindex-h](https://github.com/hang666/oneindex-h)           
 
