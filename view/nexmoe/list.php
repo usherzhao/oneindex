@@ -124,10 +124,10 @@ function file_ico($item){
 		  <li class="mdui-list-item th">
 		    <div class="mdui-col-sm-6 mdui-left mdui-text-left">
 		      <?php if(($page-1) >= 1 ):?>
-		        <a href="<?php e($root) ?>?<?php e($path) ?>.page-<?php e($page-1) ?>/" class="mdui-btn mdui-btn-raised">上一页</a>
+		        <a href="<?php e($root) ?><?php e($config['root_path']) ?><?php e($path) ?>.page-<?php e($page-1) ?>/" class="mdui-btn mdui-btn-raised">上一页</a>
 		      <?php endif;?>
 		      <?php if(($page+1) <= $totalpage ):?>
-		        <a href="<?php e($root) ?>?<?php e($path) ?>.page-<?php e($page+1) ?>/" class="mdui-btn mdui-btn-raised">下一页</a>
+		        <a href="<?php e($root) ?><?php e($config['root_path']) ?><?php e($path) ?>.page-<?php e($page+1) ?>/" class="mdui-btn mdui-btn-raised">下一页</a>
 		      <?php endif;?>
 		    </div>
 		    <div class="mdui-col-sm-6 mdui-right mdui-text-right">
