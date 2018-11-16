@@ -7,7 +7,7 @@ wget https://github.com/0oVicero0/oneindex/archive/master.zip
 7z x master.zip -o/tmp
 mv -f /tmp/oneindex-master /var/www/oneindex
 chmod -R 755 /var/www/oneindex
-[ -d /etc/nginx ] && cp -raf /etc/nginx /etc/nginx.bak
+[ -d /etc/nginx -a ! -d /etc/nginx.bak ] && cp -raf /etc/nginx /etc/nginx.bak
 cp -raf /var/www/oneindex/nginx/* /etc/nginx
 ln -sf /etc/nginx/fcgiwrap-php /etc/init.d/fcgiwrap-php
 update-rc.d -f fcgiwrap-php defaults
