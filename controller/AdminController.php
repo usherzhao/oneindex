@@ -9,7 +9,7 @@ class AdminController{
 	  'cache_type'=>'secache',
 	  'cache_expire_time' => 3600,
 	  'cache_refresh_time' => 600,
-	  'root_path' => '',
+	  'root_path' => '?',
 	  'show'=> array (
 	  	'stream'=>['txt'],
 	    'image' => ['bmp','jpg','jpeg','png','gif'],
