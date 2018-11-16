@@ -9,6 +9,7 @@ class AdminController{
 	  'cache_type'=>'secache',
 	  'cache_expire_time' => 3600,
 	  'cache_refresh_time' => 600,
+	  'page_item' => 23,
 	  'root_path' => '?',
 	  'show'=> array (
 	  	'stream'=>['txt'],
