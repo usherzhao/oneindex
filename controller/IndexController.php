@@ -8,7 +8,7 @@ class IndexController{
 
 	function __construct(){
 		//分页页数
-		$this->z_page = 23;
+		$this->z_page = config('page_item');
       
 		//获取路径和文件名
 		$paths = explode('/', rawurldecode($_GET['path']));
