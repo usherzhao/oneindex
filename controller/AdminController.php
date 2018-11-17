@@ -45,12 +45,14 @@ class AdminController{
 		if($_POST){
 
 			config('site_name',$_POST['site_name']);
+			config('title_name',$_POST['title_name']);
 			config('style',$_POST['style']);
 			
 			config('onedrive_root',get_absolute_path($_POST['onedrive_root']));
 
 			config('cache_type',$_POST['cache_type']);
 			config('cache_expire_time',intval($_POST['cache_expire_time']));
+			config('page_item',intval($_POST['page_item']));
 
 			$_POST['root_path'] = empty($_POST['root_path'])?'?':'';
 			config('root_path',$_POST['root_path']);
