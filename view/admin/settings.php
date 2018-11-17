@@ -4,12 +4,17 @@
 <div class="mdui-container-fluid">
 
 	<div class="mdui-typo">
-	  <h1> 基本设置 <small>设置OneIndex基本参数</small></h1>
+	  <h1> 基本设置 <small>设置基本参数</small></h1>
 	</div>
 	<form action="" method="post">
 		<div class="mdui-textfield">
 		  <h4>网站名称</h4>
 		  <input class="mdui-textfield-input" type="text" name="site_name" value="<?php echo $config['site_name'];?>"/>
+		</div>
+
+		<div class="mdui-textfield">
+		  <h4>副标题</h4>
+		  <input class="mdui-textfield-input" type="text" name="title_name" value="<?php echo $config['title_name'];?>"/>
 		</div>
 
 		<div class="mdui-textfield">
@@ -34,6 +39,10 @@
 		  <input class="mdui-textfield-input" type="text" name="onedrive_root" value="<?php echo $config['onedrive_root'];?>"/>
 		</div>
 
+		<div class="mdui-textfield">
+		  <h4>项目数量</h4>
+		  <input class="mdui-textfield-input" type="text" name="page_item" value="<?php echo $config['page_item'];?>"/>
+		</div>
 
 		<div class="mdui-textfield">
 		  <h4>缓存类型<small></small></h4>
