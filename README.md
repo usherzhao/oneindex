@@ -15,8 +15,10 @@ wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/maste
 
 ## 创意整合
 1.极大简化安装步骤。           
-2.一些样式修改。         
-3.分页模式，加快页面预览速度。创意来自[oneindex-h](https://github.com/hang666/oneindex-h)           
+2.一些样式美化修改。         
+3.分页模式，加快页面预览速度。创意来自[oneindex-h](https://github.com/hang666/oneindex-h)    
+4.可后台自定义网站主标题,副标题。
+5.可后台自定义每页显示项目数量。
 
 ## change log:  
 18-03-29: 更新直链获取机制、缓存机制，避免频繁访问的token失效  
