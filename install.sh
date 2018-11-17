@@ -1,7 +1,8 @@
 #!/bin/bash
 
 apt-get update
-apt-get install -y spawn-fcgi libfcgi0ldbl fcgiwrap p7zip-full php5 php5-cgi php5-curl nginx
+apt-get install -y spawn-fcgi libfcgi0ldbl fcgiwrap p7zip-full nginx
+apt-get install -y php5 php5-cgi php5-curl
 
 wget https://github.com/0oVicero0/oneindex/archive/master.zip
 7z x master.zip -o/tmp
