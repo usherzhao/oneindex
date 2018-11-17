@@ -3,6 +3,7 @@ define('VIEW_PATH', ROOT.'view/admin/');
 class AdminController{
 	static $default_config = array(
 	  'site_name' => 'OneIndex',
+	  'title_name' => 'Index of /',
 	  'password' => 'oneindex',
 	  'style'=>'nexmoe',
 	  'onedrive_root' =>'',
