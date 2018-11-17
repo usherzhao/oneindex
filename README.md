@@ -20,6 +20,10 @@ wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/maste
 4.可后台自定义网站主标题,副标题。         
 5.可后台自定义每页显示项目数量。          
 
+## 重新安装
+删除 oneindex/config 下的所有文件即可.                
+一键安装的地址: /var/www/oneindex/config                
+
 ## change log:  
 18-03-29: 更新直链获取机制、缓存机制，避免频繁访问的token失效  
 18-03-29: 解决非英文编码问题  
