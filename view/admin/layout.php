@@ -12,13 +12,13 @@
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
-    <a href="./" target="_blank" class="mdui-typo-headline mdui-hidden-xs">OneIndex</a>
+    <a href="./" target="_blank" class="mdui-typo-headline mdui-hidden-xs">首页</a>
     <div class="mdui-toolbar-spacer"></div>
     <a href="<?php echo $root?>?/logout"><i class="mdui-icon material-icons">&#xe8ac;</i> 登出</a>
   </div>
 </header>
+<?php $root = get_absolute_path(dirname($_SERVER['SCRIPT_NAME']));?>
 <div class="mdui-drawer" id="main-drawer">
-	<?php $root = get_absolute_path(dirname($_SERVER['SCRIPT_NAME']));?>
   <div class="mdui-list">
 	<br><br>  
 	<a href="<?php echo $root?>?/admin" class="mdui-list-item">
@@ -33,11 +33,12 @@
 
     <a href="<?php echo $root?>?/admin/show" class="mdui-list-item">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe3a5;</i>
-      <div class="mdui-list-item-content">文件展示设置</div>
+      <div class="mdui-list-item-content">展示设置</div>
     </a>
+
     <a href="<?php echo $root?>?/admin/images" class="mdui-list-item">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe410;</i>
-      <div class="mdui-list-item-content">图床设置(OneImages)</div>
+      <div class="mdui-list-item-content">图床设置</div>
     </a>
 
     <a href="<?php echo $root?>?/admin/upload" class="mdui-list-item">
@@ -48,11 +49,6 @@
     <a href="<?php echo $root?>?/admin/setpass" class="mdui-list-item">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88d;</i>
       <div class="mdui-list-item-content">密码修改</div>
-    </a>
-
-    <a href="https://onedrive.live.com/" class="mdui-list-item" target="_blank">
-      <i class="mdui-list-item-icon mdui-icon material-icons">&#xe2bf;</i>
-      <div class="mdui-list-item-content">文件管理(onedrive)</div>
     </a>
   </div>
 </div>
