@@ -62,7 +62,7 @@ class IndexController{
 		list($password) = explode("\n",$password);
 		$password = trim($password);
 		unset($this->items['.password']);
-		if(!empty($password) && $password == $_COOKIE[md5($this->path)]){
+		if(!empty($password) && strcmp($password, $_COOKIE[md5($this->path)]) === 0){
 			return true;
 		}
 
@@ -71,7 +71,7 @@ class IndexController{
 	}
 
 	function password($password){
-		if(!empty($_POST['password']) && $password == $_POST['password']){
+		if(!empty($password) && strcmp($password, $_COOKIE[md5($this->path)]) === 0){
 			setcookie(md5($this->path), $_POST['password']);
 			return true;
 		}
