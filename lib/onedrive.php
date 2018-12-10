@@ -87,7 +87,7 @@
 			if(is_array($hide_list) && count($hide_list)>0){
 				foreach($hide_list as $hide_dir){
 					foreach($items as $key=>$_array){
-						if(stristr($key,trim($hide_dir)))unset($items[$key]);
+						if(!empty(trim($hide_dir)) && stristr($key,trim($hide_dir)))unset($items[$key]);
 					}
 				}
 			}
