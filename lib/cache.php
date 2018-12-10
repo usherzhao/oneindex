@@ -2,8 +2,8 @@
 
 	!defined('CACHE_PATH') && define('CACHE_PATH', sys_get_temp_dir().'/');
 	class cache{
-		// 驱动方式（支持filecache/memcache/secache）
-		static $type = 'secache';
+		// 驱动方式（支持filecache/memcache/secache/redis）
+		static $type = 'filecache';
 
 		// 返回缓存实例
     	protected static function c(){
@@ -15,7 +15,7 @@
 			list($type, $config) = explode(':', self::$type, 2);
 
 			$type .= '_';
-	    	if( in_array($type, array('filecache_', 'memcache_', 'secache_')) ){
+	    	if( in_array($type, array('filecache_', 'memcache_', 'secache_', 'redis_')) ){
 		    	$file = str_replace("\\", "/", dirname(__FILE__)) . '/cache/'.$type.'.php';
 			    include_once( $file );
 		    	$instance = new $type($config);

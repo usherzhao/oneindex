@@ -51,6 +51,8 @@ class AdminController{
 			
 			config('onedrive_root',get_absolute_path($_POST['onedrive_root']));
 
+			config('onedrive_hide',$_POST['onedrive_hide']);
+
 			config('cache_type',$_POST['cache_type']);
 			config('cache_expire_time',intval($_POST['cache_expire_time']));
 			config('page_item',intval($_POST['page_item']));
@@ -157,11 +159,11 @@ class AdminController{
 		if($_SERVER['HTTP_HOST'] == 'localhost'){
 			$redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
 		}else{
-			// 调用 https://moeclub.org/onedrive-login 中转
-			$redirect_uri = 'https://moeclub.org/onedrive-login';
+ 			// 调用 https://moeclub.org/onedrive-login 中转
+ 			$redirect_uri = 'https://moeclub.org/onedrive-login';
 		}
-
-		$app_url = "https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id={$client_id}&redirect_uri={$redirect_uri}";
+		
+ 		$app_url = "https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id={$client_id}&redirect_uri={$redirect_uri}";
 		return view::load('install/install_1')->with('title','系统安装')
 						->with('redirect_uri', $redirect_uri)
 						->with('app_url', $app_url);

@@ -7,24 +7,24 @@ class IndexController{
 	private $time;
 
 	function __construct(){
-		//分页页数
-		$this->z_page = config('page_item');
-      
+ 		//分页页数
+ 		$this->z_page = config('page_item');
+       
 		//获取路径和文件名
 		$paths = explode('/', rawurldecode($_GET['path']));
 		if(substr($_SERVER['REQUEST_URI'], -1) != '/'){
 			$this->name = array_pop($paths);
 		}
 
-		preg_match_all("(\.page\-([0-9]*)/$)",get_absolute_path(join('/', $paths)),$mat);
-		if(empty($mat[1][0])){
-			$this->page = 1;
-		} else {
-			$this->page = $mat[1][0];
-		}
-        
-		$this->url_path = preg_replace("(\.page\-[0-9]*/$)","",get_absolute_path(join('/', $paths)));
-        
+ 		preg_match_all("(\.page\-([0-9]*)/$)",get_absolute_path(join('/', $paths)),$mat);
+ 		if(empty($mat[1][0])){
+ 			$this->page = 1;
+ 		} else {
+ 			$this->page = $mat[1][0];
+ 		}
+         
+ 		$this->url_path = preg_replace("(\.page\-[0-9]*/$)","",get_absolute_path(join('/', $paths)));
+
 		$this->path = get_absolute_path(config('onedrive_root').$this->url_path);
 		//获取文件夹下所有元素
 		$this->items = $this->items($this->path);
@@ -40,10 +40,8 @@ class IndexController{
 		header("Expires:-1");
 		header("Cache-Control:no_cache");
 		header("Pragma:no-cache");
-		
-        $fName = $this->name;
-      
-		if(!empty($fName)){//file
+
+		if(!empty($this->name)){//file
 			return $this->file();
 		}else{//dir
 			return $this->dir();
@@ -71,7 +69,7 @@ class IndexController{
 	}
 
 	function password($password){
-		if(!empty($password) && strcmp($password, $_COOKIE[md5($this->path)]) === 0){
+		if(!empty($_POST['password']) && strcmp($password, $_POST['password']) === 0){
 			setcookie(md5($this->path), $_POST['password']);
 			return true;
 		}
@@ -127,13 +125,12 @@ class IndexController{
 			//不在列表中展示
 			unset($this->items['HEAD.md']);
 		}
-        
-        $this->totalpage = ceil(count($this->items) / $this->z_page);
-      
-        if($this->page*$this->z_page >= count($this->items))
-          $this->page = $this->totalpage;
-        
-      
+
+		$this->totalpage = ceil(count($this->items) / $this->z_page);
+
+		if($this->page*$this->z_page >= count($this->items))
+		$this->page = $this->totalpage;
+
 		return view::load('list')->with('title', config('title_name'))
 					->with('navs', $navs)
 					->with('path',join("/", array_map("rawurlencode", explode("/", $this->url_path))))
@@ -141,8 +138,8 @@ class IndexController{
 					->with('items', array_slice($this->items,$this->z_page*($this->page-1),$this->z_page))
 					->with('head',$head)
 					->with('readme',$readme)
-					->with('page',$this->page)
-					->with('totalpage',$this->totalpage);
+ 					->with('page',$this->page)
+ 					->with('totalpage',$this->totalpage);
 	}
 
 	function show($item){

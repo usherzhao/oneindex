@@ -12,10 +12,10 @@
 		  <input class="mdui-textfield-input" type="text" name="site_name" value="<?php echo $config['site_name'];?>"/>
 		</div>
 
-		<div class="mdui-textfield">
-		  <h4>副标题</h4>
-		  <input class="mdui-textfield-input" type="text" name="title_name" value="<?php echo $config['title_name'];?>"/>
-		</div>
+  		<div class="mdui-textfield">
+ 		  <h4>副标题</h4>
+ 		  <input class="mdui-textfield-input" type="text" name="title_name" value="<?php echo $config['title_name'];?>"/>
+ 		</div>
 
 		<div class="mdui-textfield">
 		  <h4>网站风格<small></small></h4>
@@ -34,21 +34,27 @@
 		  </select>
 		</div>
 
+  		<div class="mdui-textfield">
+ 		  <h4>项目数量</h4>
+ 		  <input class="mdui-textfield-input" type="text" name="page_item" value="<?php echo $config['page_item'];?>"/>
+  		</div>
+
 		<div class="mdui-textfield">
-		  <h4>onedrive起始目录(空为根目录)<small>例：仅共享share目录 /share</small></h4>
+		  <h4>起始目录 <small>(空为根目录)</small></h4>
 		  <input class="mdui-textfield-input" type="text" name="onedrive_root" value="<?php echo $config['onedrive_root'];?>"/>
 		</div>
 
+
 		<div class="mdui-textfield">
-		  <h4>项目数量</h4>
-		  <input class="mdui-textfield-input" type="text" name="page_item" value="<?php echo $config['page_item'];?>"/>
+		  <h4>需要隐藏的目录 <small>(每行一项,通配识别,清空缓存后生效)</small></h4>
+		  <textarea class="mdui-textfield-input" placeholder="回车换行" name="onedrive_hide"><?=@$config['onedrive_hide'];?></textarea>
 		</div>
 
 		<div class="mdui-textfield">
 		  <h4>缓存类型<small></small></h4>
 		  <select name="cache_type" class="mdui-select">
 			  <?php 
-			 	foreach(['secache', 'filecache', 'memcache'] as $type):
+			 	foreach(['secache', 'filecache', 'memcache', 'redis'] as $type):
 			  ?>
 			  <option value ="<?php echo $type;?>" <?php echo ($type==$cache_type)?'selected':'';?>><?php echo $type;?></option>
 			  <?php endforeach;?>

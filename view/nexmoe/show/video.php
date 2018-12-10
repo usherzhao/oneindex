@@ -13,7 +13,7 @@ $item['thumb'] = onedrive::thumbnail($item['path']);
 	<div class="mdui-row">
 	  <select class="mdui-select" mdui-select="{position: 'top'}" id="sel">
 	    <option value="<?php e($url);?>" selected>下载地址</option>
-	    <option value="<video><source src="<?php e($url);?>" type="video/mp4"></video>">引用地址</option>
+	    <option value="<video><source src='<?php e($url);?>' type='video/mp4'></video>">引用地址</option>
 	  </select>
 	  <textarea class="mdui-textfield-input" id="val" readonly><?php e($url);?></textarea>
 	</div>
