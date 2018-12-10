@@ -10,6 +10,14 @@ OneDrive Directory Index
 ```
 wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/master/install.sh |bash
 ```
+## 一键安装（Debian 8）：
+```
+# 安装 redis 支持
+apt-get install -y redis php5-redis
+# 重启 fcgiwrap-php 进程
+bash /etc/init.d/fcgiwrap-php restart
+# 后台选择 redis 模式, 并更新缓存.
+```
 ## 预览地址
 [萌咖 存储仓库](https://moeclub.org/onedrive/)
 
