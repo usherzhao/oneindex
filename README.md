@@ -13,7 +13,7 @@ wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/maste
 ## 添加 Redis 支持（Debian 8）：
 ```
 # 安装 redis 支持
-apt-get install -y redis php5-redis
+apt-get install -y redis-server php5-redis
 # 重启 fcgiwrap-php 进程
 bash /etc/init.d/fcgiwrap-php restart
 # 后台选择 redis 模式, 并更新缓存.
