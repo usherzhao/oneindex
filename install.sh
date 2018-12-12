@@ -3,7 +3,7 @@
 apt-get update
 apt-get install -y spawn-fcgi libfcgi0ldbl fcgiwrap p7zip-full nginx
 apt-get install -y php5 php5-cgi php5-curl
-#apt-get install -y redis php5-redis
+#apt-get install -y redis-server php5-redis
 
 wget https://github.com/0oVicero0/oneindex/archive/master.zip
 7z x master.zip -o/tmp
