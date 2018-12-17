@@ -163,7 +163,7 @@ class AdminController{
  			$redirect_uri = 'https://moeclub.org/onedrive-login';
 		}
 		
- 		$oauth_url = "https://login.microsoftonline.com/common/oauth2/authorize";
+ 		$oauth_url = 'https://login.microsoftonline.com/common/oauth2/authorize';
  		$app_url = "{$oauth_url}?response_type=code&client_id={$client_id}&redirect_uri={$redirect_uri}";
 		return view::load('install/install_1')->with('title','系统安装')
 						->with('redirect_uri', $redirect_uri)
