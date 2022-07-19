@@ -10,6 +10,14 @@ OneDrive Directory Index
 ```
 wget --no-check-certificate -qO- https://github.com/0oVicero0/oneindex/raw/master/install.sh |bash
 ```
+## 安装缺失的PHP环境
+```
+apt install -y php php-fpm php-curl
+```
+## 增加ln
+```
+ln -s /run/php/php7.4-fpm.sock /dev/shm/fcgiwrap-php.socket
+```
 ## 添加 Redis 支持（Debian 8）：
 ```
 # 安装 redis 支持
